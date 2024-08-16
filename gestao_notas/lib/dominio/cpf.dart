@@ -21,28 +21,42 @@ class CPF{
   }
 
   bool eNumerosDiferentes(){
-    for (var i = 0; i < numerosCPF.length; i++){
-      if(numerosCPF[i] != numerosCPF[i+1]) return true;
+    for (var i = 0; i < numerosCPF.length - 1; i++){
+      if(numerosCPF[i] != numerosCPF[i+1]){
+        return true;
+      } 
     }
-    return false;
+    throw Exception ('O CPF não pode ter todos os números iguais');
+    
   } //verificar se os números são diferentes
 
-/*
-  bool eDigitosCorretos(){
-    var soma = 0;
-    for (var i = 0; i < 9; i++){
-      soma += numerosCPF[i] * (10-i);
+
+  bool eDigitosCorretos(int indice){
+    if(calcularDigito(8)!=numerosCPF[9]) throw Exception('CPF - primeiro dígito verificador inválido');
+    if(calcularDigito(9)!=numerosCPF[10]) throw Exception('CPF - segundo dígito verificador inválido');
+    return true;
+  }
+  
+  int calcularDigito(int indice){
+    int soma = 0;
+    for (var i = 0; i < indice; i++){
+      soma += numerosCPF[i] * (indice + 1 - i);
     }
-    var resto = soma % 11;
-    var digitoVerificador = resto 
+    int digito = soma % 11;
+    if (digito == 10) digito = 0;
+    return digito;
+  }
+
 
   } //verifica se o CPF é válido
 
+/*
   bool eUnico(){
 
-  }
+
+  }//verifica se o CPF é único
+
 */
-}
 
 /*
 CPF - não pode ser vazio ou nulo; CE

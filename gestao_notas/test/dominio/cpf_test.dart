@@ -33,9 +33,20 @@ main(){
       test('Teste com números repetidos', (){
         expect(() => CPF('111.222.333-44').eNumerosDiferentes(), returnsNormally);
       });
+
+      test('Teste com números iguais', () {
+        expect(() => CPF('333.333.333-33').eNumerosDiferentes(), throwsException);
+      });
       
     });
-  
+/*
+    group('[e06] CPF - verificar os dígitos verificadores', () {
+
+      test('Teste com dígitos corretos', (){
+        expect(() => CPF('').eDigitosCorretos(), returnsNormally);
+      });
+    });
+*/
     });
   });
 }

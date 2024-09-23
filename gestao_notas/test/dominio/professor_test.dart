@@ -47,6 +47,12 @@ main(){
 
     });
 
+    /*group ('Teste de conexão', (){
+        test('Entidade Professor - teste de conexão com banco de dados', () {
+          expect(() => professor.salvar(), returnsNormally);
+        });
+    });*/
+
   });
 
 }

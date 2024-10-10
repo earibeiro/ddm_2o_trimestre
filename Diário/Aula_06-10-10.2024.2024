@@ -1,0 +1,33 @@
+
+Arquitetura do projeto:
+
+Arquitetura em Camadas(Onion):
+
+- Camada de apresentação:
+	A classe Students é um widget que representa interface do usuário;
+	Ea também utiliza Future para construir interface com base nos dados assíncronos.
+
+- Camada de aplicação:
+	AStudent (que está em application/a_student) tem lógica de aplicação e coordena
+	as operações entre camada de apresentação e domínio.
+
+- Camada de domínio:
+	Classe DTOStudent (dominio/dto/dto_student) indica que camada contém as entidades 
+	de domínio e objetos de transferência de dados.
+
+- Camada de dados:
+	DaoStudent e Connection são responsáveis por interagir com o BD SQLite.
+
+
+Exemplo de Fluxo de Dados:
+- Camada de Apresentação (Students widget):
+	Chama o método list() para obter a lista de estudantes.
+
+- Camada de Aplicação (AStudent):
+	Implementa a lógica para obter a lista de estudantes, possivelmente chamando 	métodos na camada de dados.
+
+- Camada de Dados (DaoStudent e Connection):
+	Interage com o banco de dados SQLite para recuperar os dados dos estudantes.
+
+- Camada de Domínio (DTOStudent):
+	Define a estrutura dos dados dos estudantes que são transferidos entre as camadas.

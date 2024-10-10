@@ -1,7 +1,8 @@
+<h1>DIÁRIO DE AULA - 10/10/2024</h1>
 
 Arquitetura do projeto:
 
-Arquitetura em Camadas(Onion):
+Arquitetura em Camadas/CEBOLA:
 
 - Camada de apresentação:
 	A classe Students é um widget que representa interface do usuário;
